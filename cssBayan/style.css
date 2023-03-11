@@ -3,6 +3,8 @@ body{
     line-height: 1.5;
     background-color: #aad8f8;
     user-select: none;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 *{
     box-sizing: border-box;

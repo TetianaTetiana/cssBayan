@@ -1,0 +1,111 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    background-color: #aad8f8;
+    user-select: none;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+*{
+    box-sizing: border-box;
+}
+/* -------------------------------------------- */
+.header {
+    text-align: center;
+    color: rgb(97, 28, 9);
+}
+.main{
+    padding: 0 1em;
+}
+.accordion-list {
+    font-family: monospace;
+    list-style: none;
+    width: 45em;
+    margin: 0 auto;
+    padding: 0;
+}
+.accordion-item {
+    border-top: thin solid rgb(0, 0, 0);
+    border-radius: .5rem;
+}
+input {
+    display: none;
+}
+input:checked + label {
+    max-height: 100%;
+    color: rgb(253, 81, 33);
+}
+.cross{
+    width: .8em;
+    height: .8em;
+    transition: all .5s ease;
+}
+input:checked + label .cross{
+    transform: rotate(45deg);
+}
+label {
+    font-weight: bold;
+    color: rgb(52, 36, 73);
+    font-size: 2em;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    max-height: 1.5em;
+    overflow: hidden;
+    padding: 0 1rem;
+    transition: all .2s ease;
+}
+.accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.accordion-meme img{
+    display: block;
+    width: 27rem;
+    max-width: 100%;
+    border-radius: .5em;
+    margin: 0.5em auto;
+    text-align: center;
+    font-size: 1rem;
+}
+
+@media (hover:hover) {
+    label:hover {
+        max-height: 80vh;
+        transition: all 1.2s ease;
+    }
+    label:hover .cross {
+        transform: rotate(45deg);
+    }
+    .cross{
+        width: .8em;
+        height: .8em;
+        opacity: 0;
+        transition: all .5s ease;
+    }
+    .accordion-list:hover .cross {
+        opacity: 1;
+    }
+}
+@media (max-width:768px) {
+    .accordion-list {
+        width: 40em;
+    }
+    label {
+        font-size: 1.5em;
+    }
+}
+@media (max-width:568px) {
+    .accordion-list {
+        width: 22em;
+    }
+    label {
+        padding-top: 1em;
+        max-height: 3em;
+        font-size: 1em;
+    }
+    .accordion-meme img{
+        width: 14rem;
+    }
+}
